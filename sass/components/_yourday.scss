@@ -1,0 +1,84 @@
+.yourday{
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+
+  h2{
+    @include headingM;
+    font-size: 50px;
+    width: 75%; 
+    margin-bottom: 24px;
+    margin-top: 24px;
+
+     @include desktop{
+      @include headingL;
+     }
+  }
+
+  p{
+    @include bodyS;
+    @include desktop{
+      @include bodyM;
+      margin-top: 60px;
+    }
+  }
+
+  .imgPequeñaVertical{
+    @include mobile {
+      display: none;
+    }
+  }
+  
+  .imagen2horizontal{
+    display: none;
+  }
+
+  @include tablet{
+    margin-top: 80px;
+
+    .flex{
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .block{
+      width: 50%;
+      h2{
+        width: 60%;
+      }
+      p{
+        width: 90%;
+      }
+    }
+    .imgDerecha{
+      width: 50%;
+    }
+    .imgPequeña{
+      display: none;
+    }
+
+    .imgVertical{
+      grid-row: span 2;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 60% 40%;
+      gap:3px;
+
+      @include desktop{
+        gap:32px;
+      }
+    }
+  }
+
+  @include desktop{
+    .imgDerecha{
+      display: none;
+    }
+    .imagen2horizontal{
+      display: block;
+    }
+  }
+}

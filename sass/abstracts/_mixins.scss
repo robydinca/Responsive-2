@@ -1,4 +1,9 @@
 //media queries
+@mixin mobile{
+  @media(max-width: $mobile){
+    @content;
+  }
+}
 @mixin tablet {
   @media (min-width: $tablet) {
     @content;
@@ -24,69 +29,94 @@
 }
 
 //botones
-@mixin btn($color, $color-hover, $color-texto, $color-texto-hover) {
-  background: $color;
-  color: $color-texto;
-  border: none;
-  border-radius: 28px;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  width: 167;
-  height: 56px;
-  padding: 14px 30px;
-  line-height: 28px;
-  &:hover {
-    background: $color-hover;
-    color: $color-texto-hover;
+@mixin boton1{
+  @include headingS;
+  background-color: $negro;
+  color: $blanco;
+  font-size: 16px;
+  padding: 20px;
+  position: relative;
+  width: 220px;
+
+  &::after{
+    content: "";
+    display: block;
+    background-color: $naranja;
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
 
+@mixin boton2{
+  @include headingS;
+  background-color: $negro;
+  color: $blanco;
+  font-size: 16px;
+  padding: 20px;
+  position: relative;
+  width: 220px;
+
+  &::after{
+    content: "";
+    display: block;
+    background-color: $naranja;
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 75%;
+  }
+}
+
+
 //tipografias
-@mixin tituloXL() {
-  font-size: 56px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  color: $azul;
+@mixin headingXL{
+  font-size: 96px;
+  line-height: 88px;
+  font-family: $fuenteTitulo;
+  font-weight: 700;
+  color: $negro;
 }
 
-@mixin tituloL() {
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  color: $azul;
+@mixin headingL{
+  font-size: 70px;
+  line-height: 70px;
+  font-family: $fuenteTitulo;
+  font-weight: 600;
+  color: $negro;
 }
 
-@mixin tituloM() {
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 40px;
-  color: $azul;
+@mixin headingM{
+  font-size: 60px;
+  line-height: 50px;
+  font-family: $fuenteTitulo;
+  font-weight: 600;
+  color: $negro;
 }
 
-@mixin tituloS() {
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  color: $azul;
+@mixin headingS{
+  font-size: 36px;
+  line-height: 36px;
+  font-family: $fuenteTitulo;
+  font-weight: 600;
+  color: $negro;
 }
 
 @mixin bodyM{
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 28px;
-color: $gris;
+  font-size: 22px;
+  line-height: 32px;
+  font-family: $fuenteCuerpo;
+  font-weight: 400;
+  color: $gris;
 }
 
 @mixin bodyS{
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 28px; 
-  color: $gris;
+  font-size: 18px;
+  line-height: 28px;
+  font-family: $fuenteCuerpo;
+  font-weight: 400;
+  color: $negro;
 }

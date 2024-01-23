@@ -1,0 +1,43 @@
+.location {
+  background-color: $negro;
+  color:$blanco;
+  padding: 40px 16px;
+
+  h2{
+    @include headingM;
+    color: $blanco;
+    margin-bottom: 50px;
+    font-size: 46px;
+  }
+
+  h3{
+    @include headingS;
+    color: $naranja;
+    margin-bottom: 20px;
+  }
+
+  p{
+    @include bodyS;
+    color: $blanco;
+
+    &:last-child{
+      margin-top: 30px;
+    }
+  }
+
+  @include tablet{
+    display: flex;
+    padding: 80px 36px;
+    justify-content: space-around;
+    gap:100px;
+    div{
+      width: 70%;
+    }
+  }
+  @include desktop{
+    justify-content: space-around;
+    div{
+      width: 40%;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.btn{
+  @include boton2;
+  z-index: 99;
+  position: absolute;
+  padding-right: 5px;
+  img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    z-index: 99;
+    position: relative;
+    top: 5px;
+    right: 5px;
+  }
+  span {
+    position: relative;
+    left:30px;
+  }
+
+  @include tablet{
+    left: 36px;
+  }
+  @include desktop{
+    left: 180px;
+  }
+}
+
+.map{
+  position: relative;
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .mapTablet{
+    display: none;
+  }
+
+  @include tablet{
+    .mapMobile{
+      display: none;
+    }
+    .mapTablet{
+      display: block;
+    }
+  }
+}
